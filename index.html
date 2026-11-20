@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>llg's constellation!!</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<canvas id = "starfield"></canvas>
+
+ <div class="navbar">
+            <button onclick="showSection('about')"> profile</button>
+            <button onclick="showSection('projects')">projects</button>
+            <button onclick="showSection('contact')">contact</button>
+        </div>
+        
+<div class = "site-layout">
+    
+    <aside class= "sidebar left-sidebar">
+        <div class="hero">
+            <img src = "images/profile.jpg" alt = "profile piucture" width = "100" height = "100">
+            <h2>reach for the stars~</h2>
+        </div>
+
+        <div class = "widget">
+            <h2>now playing~</h2>
+            <div class = "song-title">
+                <p>whatsername</p>
+            </div>
+
+            <input 
+                type = "range"
+                id= "progressBar"
+                min = "0"
+                max="100"
+                value = "0">
+
+            <audio
+                id = "musicPlayer"
+                preload = "auto"
+                src= "music/song.mp3">
+            </audio>
+            
+            <div id = "songTime">
+                0:00/0:00
+            </div>
+            
+            <div class ="music-controls">
+                <button id = "playButton">
+                    ▶
+                </button>
+
+                <input 
+                    type = "range"
+                    id = "volumeSlider"
+                    min = "0"
+                    max = "100"
+                    value = "50">
+            </div>
+        </div>
+    </aside>
+    <main class = "main-content">
+
+
+    <div class = "section" id = "about">
+        <div class = "about-me editable">
+            <h2>about me </h2>
+            <p> hiiii! i'm llg, and i'm in ninth grade. i love hardware and 3d modeling, but i figured i'd try to make a software project this time--- this is the first website i've ever programmed, and i hope you enjoy it!!</p>
+        </div>
+        <div class= "about-me editable">
+            <h2> likes </h2>
+            <ul>
+                <li> ARCANE OMGGG </li>
+                <li> math :> </li>
+                <li> python </li>
+                <li> musiccc (2000's punk rock is always the best and will always be the best) </li>
+                <li> piano!! beethoven sonatas rn : </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class ="about-me section" id="projects">
+        <h2>github projects~</h2>
+
+        <div id="projects-container"></div>
+    </div>
+
+    <div class="about-me section editable" id="contact">
+        <h2> other ways to reach me</h2>
+        <ul>
+            <p><a href="mailto:linalgrayson@gmail.com">email me!</a></p>
+            <p><a href="https://www.instagram.com/llg137l" target="_blank">instagram</a></p>
+        </ul>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            let sections = document.getElementsByClassName("section");
+
+            for (let i = 0; i < sections.length; i++) {
+                sections[i].style.display = "none";
+            }   
+
+            document.getElementById(sectionId).style.display = "block";
+        }
+
+        showSection("about");
+    </script>
+    </main>
+
+    <aside class = "sidebar right-sidebar">
+        <div class = "widget">
+            <h3> utilities</h3>
+            <button id="editButton"> edit </button>
+            <button id="doodleButton">doodle!</button>
+            <button id="resetButton"> reset </button>
+        </div>
+        
+        <div class = "widget">
+            <h2>bookmarks</h2>
+            <p><a href="https://hackclub.com/" target = "_blank"> hack club!!</a></p>
+            <p><a href = "https://www.pixilart.com/draw?ref=home-page" target="_blank"> pixilart </a> </p>
+            <p><a href= "https://crossroads.hackclub.com/home" target= "_blank"> crossroads...</a></p>
+        </div>
+
+
+        <div class = "widget">
+        <h2>theme</h2>
+        <input 
+            type = "color"
+            id= "themePicker"
+            value = "#7488e8">
+        </div>
+    </aside>
+
+    </aside>
+</div>
+<canvas id="doodleLayer"></canvas>
+
+<script src="script.js"></script>
+</body>
+</html>
