@@ -265,12 +265,16 @@ audio {
 .music-controls{
     display: flex;
     align-items:center;
-    gap: 12px
+    justify-content: center;
+    gap: 12px;
 }
 
 #playButton{
     width: 40px;
     height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: none;
     border-radius: 50%;
     cursor:pointer;
