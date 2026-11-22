@@ -30,6 +30,15 @@ fetch("https://api.github.com/users/linalg137/repos")
 
         });
 
+fetch("site-data.json")
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById("aboutText")
+            .innerHTML.data.about;
+        document.getElementById("likesText")
+            .innerHTML=data.contact;
+    });
+
 let editing = false;
 
 const editButton =
@@ -506,3 +515,38 @@ function timeShootingStar(){
 }
 
 timeShootingStar();
+
+const exportButton =
+    document.getElementById("exportButton")
+
+exportButton.addEventListener("click", () => {
+    const siteData = {
+        about:
+            document.getElementById("aboutText")
+            .innerHTML,
+
+        likes: 
+            document.getElementById("likesText")
+            .innerHTML,
+
+        contact:
+            document.getElementById("contact")
+            .innerHTML
+    };
+
+    const blob = new Blob(
+
+        [
+            JSON.stringify(siteData, null, 2)
+        ],
+        { type:"application/json"}
+    );
+
+    const link = document.createElement("a");
+
+    link.href = URL.createObjectURL(blob);
+
+    link.download = "site-data.json";
+
+    link.click();
+});
