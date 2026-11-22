@@ -75,12 +75,12 @@ const editableSections =
     document.querySelectorAll(".editable");
 
 editableSections.forEach(section => {
-    const saved =
-        localStorage.getItem(section.id);
-    
-    if (saved){
-        section.innerHTML = saved;
-    }
+    section.addEventListener("input", () => {
+        localStorage.setItem(
+            section.id,
+            section.innerHTML
+        );
+    });
 
     section.addEventListener("input",()=>{
         localStorage.setItem(
