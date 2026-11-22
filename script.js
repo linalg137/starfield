@@ -34,8 +34,10 @@ fetch("site-data.json")
     .then(response => response.json())
     .then(data => {
         document.getElementById("aboutText")
-            .innerHTML.data.about;
+            .innerHTML=data.about;
         document.getElementById("likesText")
+            .innerHTML=data.likes;
+        document.getElementById("contact")
             .innerHTML=data.contact;
     });
 
