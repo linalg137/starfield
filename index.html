@@ -16,6 +16,7 @@
  <div class="navbar">
             <button onclick="showSection('about')"> profile</button>
             <button onclick="showSection('projects')">projects</button>
+            <button onclick="showSection('blog')">glob</button>
             <button onclick="showSection('contact')">contact</button>
         </div>
         
@@ -68,26 +69,17 @@
 
 
     <div class = "section" id = "about">
-        <div  id = "aboutText" class = "about-me editable">
-            <h2>about me </h2>
-            <p> hiiii! i'm llg, and i'm in ninth grade. i love hardware and 3d modeling, but i figured i'd try to make a software project this time--- this is the first website i've ever programmed, and i hope you enjoy it!!</p>
-        </div>
-        <div id = "likesText" class= "about-me editable">
-            <h2> likes </h2>
-            <ul>
-                <li> ARCANE OMGGG </li>
-                <li> math :> </li>
-                <li> python </li>
-                <li> musiccc (2000's punk rock is always the best and will always be the best) </li>
-                <li> piano!! beethoven sonatas rn : </li>
-            </ul>
-        </div>
+        <div  id = "aboutText" class = "about-me editable"></div>
+        <div id = "likesText" class= "about-me editable"></div>
     </div>
 
     <div class ="about-me section" id="projects">
         <h2>github projects~</h2>
-
         <div id="projects-container"></div>
+    </div>
+
+    <div class = "section editable" id = "blog"> 
+        <div id = "blogPosts" class = "about-me"></div>
     </div>
 
     <div class="about-me section editable" id="contact">
@@ -121,7 +113,16 @@
             <button id="doodleButton">doodle!</button>
             <button id="resetButton"> reset </button>
         </div>
-        
+
+        <div id = "editorToolbar" style ="display:none">
+            <div class = "widget">
+                <button id = "boldButton">B</button>
+                <button id ="italicButton">I</button>
+                <button id="linkButton">link</button>
+                <button id="imageButton">image</button>
+            </div>
+        </div>
+
         <div class = "widget">
             <h2>bookmarks</h2>
             <p><a href="https://hackclub.com/" target = "_blank"> hack club!!</a></p>

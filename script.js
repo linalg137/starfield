@@ -39,6 +39,20 @@ fetch("site-data.json")
             .innerHTML=data.likes;
         document.getElementById("contact")
             .innerHTML=data.contact;
+        
+        const blogContainer =  document.getElementById("blogPosts");
+        
+        data.blogPosts.forEach(post => {
+            const article = document.createElement("div");
+        
+        article.className = "about-me";
+        article.innerHTML = `
+            <h2>${post.title}</h2>
+            <p>${post.date}</p>
+            <p> ${post.content}</p>`;
+    
+        blogContainer.appendChild(article);
+        });
     });
 
 let editing = false;
@@ -49,6 +63,7 @@ const editButton =
 editButton.addEventListener("click",() => {
     editing = !editing;
 
+    const toolbar = document.getElementById("editorToolbar");
     const sections = 
         document.querySelectorAll(".editable");
 
@@ -69,6 +84,9 @@ editButton.addEventListener("click",() => {
         editing
             ? "save changes"
             : "edit site"
+    
+    if (editing){ toolbar.style.display = "block";
+    } else {toolbar.style.display = "none"};
 });
 
 const editableSections =
@@ -551,4 +569,41 @@ exportButton.addEventListener("click", () => {
     link.download = "site-data.json";
 
     link.click();
+});
+
+document.getElementById("boldButton") 
+.addEventListener("click", ()=> {
+    document.execCommand("bold");
+});
+
+document.getElementById("italicButton") 
+.addEventListener("click", ()=> {
+    document.execCommand("italic");
+});
+
+document.getElementById("linkButton") 
+.addEventListener("click", () => {
+    const url = 
+        prompt("Enter URL:");
+
+    if (!url) return;
+    document.execCommand(
+        "createLink",
+        false,
+        url
+    );
+});
+
+document.getElementById("imageButton") 
+.addEventListener("click", () => {
+    const imagePath =
+        prompt("Image path:");
+    
+    if (!imagePath) return;
+    
+    document.execCommand(
+        "insertImage",
+        false,
+        imagePath
+    );
 });
