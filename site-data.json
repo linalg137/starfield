@@ -3,19 +3,5 @@
   "likes": "\n            <h2> likes </h2>\n            <ul>\n                <li>WITCH HAT ATELIER RAHH</li>\n                <li> math :&gt; </li>\n                <li> python </li>\n                <li> musiccc (2000's punk rock is always the best and will always be the best) </li>\n                <li> piano!! beethoven sonatas rn&nbsp;</li>\n            </ul>\n        ",
   "contact": "\n        <h2> other ways to reach me</h2>\n        <ul>\n            <p><a href=\"mailto:linalgrayson@gmail.com\">email me!</a></p>\n            <p><a href=\"https://www.instagram.com/llg137l\" target=\"_blank\">instagram</a></p>\n</ul>\n",
 
-  "blogPosts": [
-    {
-        "title": "hiiiii~!",
-        "date": "2026-11-22",
-    
-        "content": "this is my first blog post :)"
-    },
-
-    {
-        "title": "idk what to put hjere",
-        "date": "2026-11-15",
-
-        "content": "haven!"
-    }
-  ]
+  "blogPosts": []
 }

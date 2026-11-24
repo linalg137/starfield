@@ -82,7 +82,7 @@ editButton.addEventListener("click",() => {
 
     editButton.textContent = 
         editing
-            ? "save changes"
+            ? "finish"
             : "edit site"
     
     if (editing){ toolbar.style.display = "block";
@@ -606,4 +606,21 @@ document.getElementById("imageButton")
         false,
         imagePath
     );
+});
+
+document.getElementById("newPostButton")
+.addEventListener("click", () => {
+    const blogContainer = document.getElementById("blogPosts");
+    const article = document.createElement("div");
+
+    article.className = "about-me editable";
+
+    article.contentEditable = true;
+
+    article.innerHTML = `
+        <h2> new post </h2>
+        <p>${new Date().toLocaleDateString()}</p>
+        <p> start writing... </p>`;
+
+    blogContainer.appendChild(article);
 });
